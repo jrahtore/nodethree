@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            color: #fff;
+            line-height: 24px;
+            overscroll-behavior: none;
+            border-color: black;
+        }
+        h1 {
+            color: #fff;
+            font-family: 'Quicksand Bold';
+            font-size: 30px;
+            text-align: center;
+        }
+        #screen {
+            position: absolute;
+            z-index: 7;
+            background-color: #f26d78;
+            width: 100%;
+            height: 100%;
+            left: 0%;
+            top: 0%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <br><br><br>
+        <h1 id="message"></h1>
+    </div>
+</body>
+<script>
+    var dataJSON = JSON.parse('<%- JSON.stringify(dataJSON) %>');
+    
+    if(dataJSON.status===200)
+    {
+        //alert("Picture has been saved")
+        document.getElementById("message").innerHTML = "Picture has been saved"
+        //top.location = "https://www.google.co.in/";
+    }
+    else
+    {
+        //alert("Unauthorised Access")
+        document.getElementById("message").innerHTML = "Unauthorised Access"
+    }
+    //window.close()
+</script>
+</html>
